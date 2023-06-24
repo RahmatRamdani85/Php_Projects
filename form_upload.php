@@ -7,14 +7,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-    <div class="container d-flex mt-5 gap-3">
-    <form method="post" action="proses_upload.php" enctype="multipart/form-data">
+    <div class="container ms-3 mt-5">
+    <h2>Add Product</h2>
+    <div class="d-lg-flex gap-3">
+    <form class="col" method="post" action="proses_upload.php" enctype="multipart/form-data">
         <label>Nama</label><br>
         <input type="text" name="namaProduct"><br>
         <label>Harga</label><br>
-        <input type="number" name="hargaProduct"><br>
-        <input type="file" name="gambar"><br>
-        <button type="submit" value="submit" name="submit">Submit</button>
+        <input type="number" name="hargaProduct"><br><br>
+        <input type="file" name="gambar"><br><br>
+        <button class="btn btn-primary" type="submit" value="submit" name="submit">Submit</button>
     </form>
         <br><br>
     <?php
@@ -28,7 +30,7 @@
           if (count($file_gambar) > 0) {
             for ($i = 0; $i < count($file_gambar); $i++) {
           ?>
-              <div  style="width: 16rem;">
+              <div class="col"  style="width: 16rem;">
                   <img src="img-product/<?php echo $file_gambar[$i]; ?>" class="card-img-top" style="width: 75%;" alt="Gambar product" >
                   <div class="card-body" style="padding: 5px;">
                   <h6>
